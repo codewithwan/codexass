@@ -1,0 +1,9 @@
+build/*
+!build/.gitkeep
+
+*.exe
+*.out
+*.test
+
+__pycache__/
+*.pyc

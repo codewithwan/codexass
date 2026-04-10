@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Codex Login Complete</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Styrene+A:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #1a1915;
+        --surface: #222118;
+        --border: rgba(255, 255, 255, 0.09);
+        --text: #e8e4d9;
+        --muted: #7a7669;
+        --success: #4ade80;
+        --mono: "SF Mono", "Fira Code", monospace;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f5f3ee;
+          --surface: #edeae3;
+          --border: rgba(0, 0, 0, 0.08);
+          --text: #1a1915;
+          --muted: #8a8478;
+        }
+      }
+
+      body {
+        font-family: "Styrene A", Georgia, serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        animation: up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      @keyframes up {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .check {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        background: var(--surface);
+      }
+
+      .check svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--success);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+        animation: draw 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+      }
+
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+        color: var(--text);
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.7;
+        max-width: 300px;
+      }
+
+      code {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 1px 6px;
+        border-radius: 4px;
+        color: var(--text);
+      }
+
+      .pill {
+        margin-top: 2.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.75rem;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        border-radius: 99px;
+        padding: 5px 14px;
+        font-family: var(--mono);
+        letter-spacing: 0.04em;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--success);
+        box-shadow: 0 0 6px rgba(74, 222, 128, 0.5);
+        animation: pulse 2.4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="check">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+      </div>
+      <h1>Login complete</h1>
+      <p>
+        Your <code>Codex</code> authentication finished successfully.
+        Credentials have been saved to your local config.
+      </p>
+      <div class="pill">
+        <div class="dot"></div>
+        safe to close this tab
+      </div>
+    </div>
+  </body>
+</html>
