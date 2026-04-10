@@ -2,6 +2,7 @@ package chat
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"strings"
 	"time"
@@ -102,7 +103,7 @@ func StreamReply(session domain.SessionRecord, state State, prompt, model string
 			}
 		case "error":
 			if strings.TrimSpace(payload.Message) != "" {
-				failed = fmt.Errorf(strings.TrimSpace(payload.Message))
+				failed = errors.New(strings.TrimSpace(payload.Message))
 			}
 		case "response.incomplete":
 			reason := ""

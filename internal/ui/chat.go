@@ -75,6 +75,6 @@ func RunChat(session domain.SessionRecord, model string) error {
 			continue
 		}
 		state = next
-		fmt.Println("\n")
+		fmt.Print("\n\n")
 	}
 }
